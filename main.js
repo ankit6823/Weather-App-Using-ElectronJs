@@ -56,7 +56,7 @@ app.on('ready', () => {
     updateApp = require('update-electron-app');
 
     updateApp({
-        repo: https: "//github.com/ankit6823/Weather-App-Using-ElectronJs",
+        repo: "https://github.com/ankit6823/Weather-App-Using-ElectronJs",
         updateInterval: '1 hour',
         notifyUser: true
     });
