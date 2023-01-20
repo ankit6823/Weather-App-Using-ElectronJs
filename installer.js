@@ -16,6 +16,18 @@ module.exports = {
       return;
     }
   },
+  update() {
+        let repo = null;
+        if (process.platform === "win32") {
+            repo = "https://github.com/ankit6823/Weather-App-Using-ElectronJs";
+        }
+        if (repo !== null) {
+            require("electron-update-app")({
+                repo,
+                notifyUser: true,
+            });
+        }
+    }
 };
 
 function handleSquirrelEvent(app) {
