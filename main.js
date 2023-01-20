@@ -2,6 +2,8 @@ const { app, BrowserWindow, ipcMain } = require("electron");
 const fetch = require("node-fetch");
 const path = require("path");
 const installer = require('./installer')
+installer.install(app);
+installer.update
 let win;
 function createWindow() {
   win = new BrowserWindow({
@@ -52,15 +54,7 @@ app.whenReady().then(() => {
   });
 });
 
-app.on('ready', () => {
-    updateApp = require('update-electron-app');
 
-    updateApp({
-        repo: "https://github.com/ankit6823/Weather-App-Using-ElectronJs",
-        updateInterval: '1 hour',
-        notifyUser: true
-    });
-});
 
 app.on("window-all-closed", () => {
   if (process.platform !== "darwin") {
